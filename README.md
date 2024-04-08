@@ -5,5 +5,5 @@
 ![로고명](https://img.shields.io/badge/css3-1572B6.svg?&style=for-the-badge&logo=css3&logoColor=#1572B6)
 ![로고명](https://img.shields.io/badge/eclipse%20ide-2C2255.svg?&style=for-the-badge&logo=eclipseide&logoColor=#2C2255)
 ![로고명](https://img.shields.io/badge/android%20studio-3DDC84.svg?&style=for-the-badge&logo=androidstudio&logoColor=white)
-![로고명](https://img.shields.io/badge/unity-FFFFFF.svg?&style=for-the-badge&logo=unity&logoColor=FFFFFF)
+![로고명](https://img.shields.io/badge/unity-black.svg?&style=for-the-badge&logo=unity&logoColor=FFFFFF)
 개발자로 성공하고싶다
