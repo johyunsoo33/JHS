@@ -1,5 +1,6 @@
 # JHS 
-![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=400&section=header&text=조현수%20깃허브r&fontSize=90)<br>
+<div align=center>
+![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=400&section=header&text=Hello!&fontSize=90)<br>
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fjohyunsoo33%2FJHS&count_bg=%2379C83D&title_bg=%23555555&icon=ifood.svg&icon_color=%23E7E7E7&title=%EB%B0%A9%EB%AC%B8%ED%9A%9F%EC%88%98&edge_flat=false)](https://hits.seeyoufarm.com) <br>
 ![로고명](https://img.shields.io/badge/JAVA%20SCRIPT-F7DF1E.svg?&style=for-the-badge&logo=javascript&logoColor=black)
 ![로고명](https://img.shields.io/badge/HTML5-E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
@@ -11,3 +12,4 @@
 <b>개발자로 성공하고싶다</b>
 
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=johyunsoo33)](https://solved.ac/johyunsoo33/)
+</div>
