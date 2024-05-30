@@ -1,5 +1,6 @@
 package de.kai_morich.simple_bluetooth_le_terminal;
 
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -17,12 +18,14 @@ import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.method.ScrollingMovementMethod;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,7 +38,7 @@ import java.util.Arrays;
 
 public class TerminalFragment extends Fragment implements ServiceConnection, SerialListener {
 
-    private enum Connected { False, Pending, True }
+    private enum Connected {False, Pending, True}
 
     private String deviceAddress;
     private SerialService service;
@@ -49,6 +52,9 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
     private boolean hexEnabled = false;
     private boolean pendingNewline = false;
     private String newline = TextUtil.newline_crlf;
+
+    private TextView waterStatus,lightStatus;
+    private ImageButton waterBtn, lightBtn;
 
     /*
      * Lifecycle
@@ -72,7 +78,7 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
     @Override
     public void onStart() {
         super.onStart();
-        if(service != null)
+        if (service != null)
             service.attach(this);
         else
             getActivity().startService(new Intent(getActivity(), SerialService.class)); // prevents service destroy on unbind from recreated activity caused by orientation change
@@ -80,7 +86,7 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
 
     @Override
     public void onStop() {
-        if(service != null && !getActivity().isChangingConfigurations())
+        if (service != null && !getActivity().isChangingConfigurations())
             service.detach();
         super.onStop();
     }
@@ -94,14 +100,17 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
 
     @Override
     public void onDetach() {
-        try { getActivity().unbindService(this); } catch(Exception ignored) {}
+        try {
+            getActivity().unbindService(this);
+        } catch (Exception ignored) {
+        }
         super.onDetach();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        if(initialStart && service != null) {
+        if (initialStart && service != null) {
             initialStart = false;
             getActivity().runOnUiThread(this::connect);
         }
@@ -111,7 +120,7 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
     public void onServiceConnected(ComponentName name, IBinder binder) {
         service = ((SerialService.SerialBinder) binder).getService();
         service.attach(this);
-        if(initialStart && isResumed()) {
+        if (initialStart && isResumed()) {
             initialStart = false;
             getActivity().runOnUiThread(this::connect);
         }
@@ -126,7 +135,7 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
      * UI
      */
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_terminal, container, false);
         receiveText = view.findViewById(R.id.receive_text);                          // TextView performance decreases with number of spans
         receiveText.setTextColor(getResources().getColor(R.color.colorRecieveText)); // set as default color to reduce number of spans
@@ -138,8 +147,18 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
         sendText.addTextChangedListener(hexWatcher);
         sendText.setHint(hexEnabled ? "HEX mode" : "");
 
+        waterStatus = view.findViewById(R.id.waterStatus);
+        lightStatus = view.findViewById(R.id.lightStatus);
+
+        waterBtn = view.findViewById(R.id.waterBtn);
+        lightBtn = view.findViewById(R.id.lightBtn);
+
         View sendBtn = view.findViewById(R.id.send_btn);
         sendBtn.setOnClickListener(v -> send(sendText.getText().toString()));
+
+        waterBtn.setOnClickListener(v -> send("WATER"));
+        lightBtn.setOnClickListener(v -> send("LIGHT"));
+
         return view;
     }
 
@@ -219,14 +238,14 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
     }
 
     private void send(String str) {
-        if(connected != Connected.True) {
+        if (connected != Connected.True) {
             Toast.makeText(getActivity(), "not connected", Toast.LENGTH_SHORT).show();
             return;
         }
         try {
             String msg;
             byte[] data;
-            if(hexEnabled) {
+            if (hexEnabled) {
                 StringBuilder sb = new StringBuilder();
                 TextUtil.toHexString(sb, TextUtil.fromHexString(str));
                 TextUtil.toHexString(sb, newline.getBytes());
@@ -248,16 +267,39 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
     private void receive(ArrayDeque<byte[]> datas) {
         SpannableStringBuilder spn = new SpannableStringBuilder();
         for (byte[] data : datas) {
+            String msg = new String(data);  // 수신된 데이터를 문자열로 변환
+
+            try {
+                if (msg.startsWith("% M:")) {
+                    String valueStr = msg.substring(2).trim();  // "M:" 다음부터 값을 추출
+                    Log.d("TerminalFragment", "Water value: " + valueStr);
+                    if (isNumeric(valueStr)) {
+                        int waterValue = Integer.parseInt(valueStr);
+                        getActivity().runOnUiThread(() -> waterStatus.setText(String.valueOf(waterValue)));
+                    } else {
+                        Log.e("TerminalFragment", "Invalid number format: " + valueStr);
+                    }
+                } else if (msg.startsWith("L:")) {
+                    String valueStr = msg.substring(2).trim();  // "L:" 다음부터 값을 추출
+                    Log.d("TerminalFragment", "Light value: " + valueStr);
+                    if (isNumeric(valueStr)) {
+                        int lightValue = Integer.parseInt(valueStr);
+                        getActivity().runOnUiThread(() -> lightStatus.setText(String.valueOf(lightValue)));
+                    } else {
+                        Log.e("TerminalFragment", "Invalid number format: " + valueStr);
+                    }
+                }
+            } catch (IndexOutOfBoundsException e) {
+                Log.e("TerminalFragment", "String index out of bounds: " + msg, e);
+            }
+
             if (hexEnabled) {
                 spn.append(TextUtil.toHexString(data)).append('\n');
             } else {
-                String msg = new String(data);
                 if (newline.equals(TextUtil.newline_crlf) && msg.length() > 0) {
-                    // don't show CR as ^M if directly before LF
                     msg = msg.replace(TextUtil.newline_crlf, TextUtil.newline_lf);
-                    // special handling if CR and LF come in separate fragments
                     if (pendingNewline && msg.charAt(0) == '\n') {
-                        if(spn.length() >= 2) {
+                        if (spn.length() >= 2) {
                             spn.delete(spn.length() - 2, spn.length());
                         } else {
                             Editable edt = receiveText.getEditableText();
@@ -271,6 +313,15 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
             }
         }
         receiveText.append(spn);
+    }
+
+    private boolean isNumeric(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     private void status(String str) {
@@ -292,7 +343,7 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(Arrays.equals(permissions, new String[]{Manifest.permission.POST_NOTIFICATIONS}) &&
+        if (Arrays.equals(permissions, new String[]{Manifest.permission.POST_NOTIFICATIONS}) &&
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !service.areNotificationsEnabled())
             showNotificationSettings();
     }
@@ -328,5 +379,4 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
         status("connection lost: " + e.getMessage());
         disconnect();
     }
-
 }
