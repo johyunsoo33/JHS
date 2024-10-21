@@ -1,0 +1,22 @@
+@charset "utf-8";
+html{
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+body{
+    margin: 0;
+    color: #555;
+    font-family: "Noto Sans KR","돋움",dotum,sans-serif;
+    font-size: 13.5px;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: #7d7d7d;
+    text-decoration: none;
+    cursor: pointer;
+}
+img{
+  
+}
