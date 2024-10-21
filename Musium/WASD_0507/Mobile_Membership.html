@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="CSS/MembershipMobile.css">
+</head>
+<body>
+    <div class="circle"></div>
+    <header>
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <div>
+                        <a href="Mobile_Musium.html"><img src="IMG/MLOGO2.png"></a>
+                    </div>
+                    <p>Musium</p>
+                </div>
+                <div class="sub">
+                    <a href="#">
+                        <div class="search"></div>
+                    </a>
+
+                    <button id="menu-button">
+                        <span>
+                            &#9776;
+                        </span>
+                    </button>
+                    
+
+                    <div class="menu hidden" id="menu">
+                        <div>
+                            <button id="close_button">
+                                <img src="IMG/NEXTm.png" alt="">
+                            </button>
+                            <div class="menu_login">
+                                <div><img src="IMG/사람.png" alt=""></div>
+                                <a href="Mobile_Login.html">로그인 후 이용해주세요</a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li><a href="#">실시간 리뷰</a></li>
+                                <li><a href="Mobile_Musium1.html">공연중인 작품</a></li>
+                                <li><a href="Mobile_Musium2.html">공연 예정작</a></li>
+                                <li><a href="#">마이페이지</a></li>
+                            </ul>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+    <main>
+        <section>
+
+            <form action="#" name="user_info" method="post">
+                <fieldset>
+                    <div>
+                        <h2>회원가입</h2>
+                        <p>뮤지컬 관련 소식을 받아보세요</p>
+                        <br><br>
+
+                        <div class="ID">
+                            <input type="text" name="userID" placeholder="이메일">
+                        </div>
+                        <br>
+
+                        <div class="user_name">
+                            
+                            <div class="first_name">
+                                <input type="text" name="userFN" placeholder="성">
+                            </div>
+    
+                            <div class="last_name">
+                                <input type="text" name="userLN" placeholder="이름">
+                            </div>
+                        </div>
+
+                        <div class="PW">
+                            <input type="password" name="userPW" placeholder="비밀번호">
+                        </div>
+                        <br>
+
+                        <div class="PW_check">
+                            <input type="password" name="userPWC" placeholder="비밀번호 확인">
+                        </div>
+                        <br>
+
+                        <div class="nickname">
+                            <input type="text" name="userNN" placeholder="닉네임">
+                        </div>
+                        <br>
+
+
+                        <div>
+                            <input type="submit" value="가입하기">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+</body>
+<script src="JS/menu.js">
+
+</script>
+</html>
