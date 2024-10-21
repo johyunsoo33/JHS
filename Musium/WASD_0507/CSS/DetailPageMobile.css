@@ -1,0 +1,464 @@
+@charset "utf-8";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: rgb(80, 24, 224);
+    background: radial-gradient(circle, rgba(80, 24, 224, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 200px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 1);
+    color: #fff;
+
+}
+
+.nav {
+    width: 1400px;
+    height: 50px;
+    z-index: 3;
+    margin: 75px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 300px;
+    height: 50px;
+    z-index: 3;
+    margin-right: 20px;
+    line-height: 50px;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.logo>div {
+    width: 51px;
+    height: 48px;
+    display: inline-block;
+    background: url(/WASD_0507/IMG/LOGO.png) center/cover;
+    margin-top: 5px;
+}
+
+.logo>p {
+    display: inline-block;
+    width: 154px;
+    height: 48px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 40px;
+    margin-top: 0;
+    margin-left: 9px;
+    line-height: 48px;
+}
+
+.menu {
+    width: 429px;
+    height: 100%;
+    margin-right: 20px;
+}
+#menu-button{
+    background: none;
+    border: none;
+}
+#menu-button>span{
+    color: #fff;
+    font-size: 20px;
+}
+.menu>ul {
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+}
+
+.menu>ul>li {
+    display: inline-block;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 20px;
+    line-height: 50px;
+
+}
+
+.menu>ul>li:first-child {
+    margin-left: 0;
+}
+
+.menu>ul>li>a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-family: Noto Sans KR;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28.96px;
+    text-align: left;
+
+}
+
+.sub {
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 3;
+
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    overflow: hidden;
+}
+
+.search {
+    margin-right: 50px;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    background: url(/WASD_0507/IMG/Search.png) no-repeat center/cover;
+}
+
+.sub ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sub ul li {
+    display: inline-block;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.sub ul li:last-child {
+    margin-right: 0;
+}
+
+.sub ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    font-family: Noto Sans KR;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28.96px;
+    text-align: left;
+
+}
+
+.BackImg {
+    width: 100%;
+    height: 900px;
+    z-index: 1;
+}
+
+.BackImg>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: auto;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+#title {
+    margin: 130px auto;
+}
+
+.title_main {
+    width: 1470px;
+    height: 700px;
+
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.title_main>div:nth-child(1) {
+    width: 430px;
+    height: 560px;
+    margin: 70px 100px 70px 140px;
+  
+}
+
+.title_main>div:nth-child(1)>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: auto;
+}
+
+.title_main>.mu {
+    width: 700px;
+    height: 450px;
+    margin: 103px 102px 252px 0;
+
+}
+
+.mu>div:nth-child(1)>h5 {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 44px;
+}
+
+.mu>div:nth-child(n+2) {
+    display: flex;
+
+}
+
+.mu>div:nth-child(n+2)>p {
+    display: block;
+}
+
+.mu>div:nth-child(n+2)>p:nth-child(1) {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    color: #FFFFFF;
+    padding-top: 3px;
+    padding-bottom: 4px;
+    margin-right: 59px;
+    text-align: center;
+    width: 160px;
+}
+
+.mu>div:nth-child(n+2)>p:nth-child(1)::after {
+    content: " | ";
+    margin-left: 10px;
+    display: inline;
+    width: 0;
+    height: 100%;
+    float: none;
+    background: none;
+}
+
+.mu>div:nth-child(n+2)>p:nth-child(2) {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    color: #FFFFFF;
+    margin-top: 30px;
+    margin-top: 30px;
+    padding-top: 3px;
+    padding-bottom: 4px;
+    width: 520px;
+    margin-right: -10px;
+}
+
+#intro {
+    margin: 75px auto;
+}
+
+.intro_mu {
+    width: 1440px;
+    height: 1100px;
+    border-radius: 50px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.intro_mu>div:nth-child(1) {
+    width: 1250px;
+    margin: 72px auto;
+}
+
+.intro_mu>div:nth-child(1)>h5 {
+    height: 58px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 58px;
+    align-items: center;
+    color: #ffffff;
+}
+
+.intro_mu>div:nth-child(1)>div {
+    width: 100%;
+    height: auto;
+    margin-top: 62px;
+}
+
+.intro_mu>div:nth-child(1)>div>p {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    align-items: center;
+    color: #D9D9D9;
+}
+
+.intro_mu>div:nth-child(2) {
+    background-color: #FFFFFF;
+    width: 1300px;
+    height: 1px;
+    margin: auto;
+}
+
+.intro_mu>div:nth-child(3) {
+    width: 1300px;
+
+    margin: 62px auto;
+    height: auto;
+}
+
+.intro_mu>div:nth-child(3)>div>h5 {
+    width: 1350px;
+    height: 58px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 58px;
+    align-items: center;
+    color: #ffffff;
+    margin-top: 0;
+}
+
+.stillcut {
+    margin-top: 62px;
+
+    width: 100%;
+    height: auto;
+}
+
+.stillcut>img {
+    display: inline-block;
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    image-rendering: auto;
+    margin-right: 20px;
+}
+
+#review {
+    margin-top: 75px;
+}
+
+.re {
+    margin: 0 auto;
+    width: 1440px;
+    height: 1450px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.re>div {
+    margin: 0 auto;
+    width: 1300px;
+    height: 420px;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    margin-top: 33px;
+}
+
+.re>div:first-child {
+    margin-top: 90px;
+}
+
+.re>div:first-child>form {
+    width: 100%;
+
+}
+
+.re>div:first-child>form>div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 38px;
+    margin-top: 34px;
+}
+
+.re>div:first-child>form>div>label:nth-child(1) {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    margin-right: 10px;
+
+}
+
+.re>div:first-child>form>div>label:nth-child(1)>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: auto;
+}
+
+.re>div:first-child>form>div>label:nth-child(2) {
+    width: 141px;
+    height: 30px;
+    font-family: 'SF Pro';
+    font-style: normal;
+    font-weight: 510;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+.re>div:first-child>form>textarea {
+    display: block;
+    width: 1200px;
+    margin: 35px auto;
+    background: none;
+    color: #ffffff;
+    font-family: 'SF Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    letter-spacing: 0.08em;
+    color: #ABABAB;
+    border:none;
+    border-bottom:2px solid #ffffff ;
+}
+
+.re>div:first-child>form>input {
+    box-sizing: border-box;
+    width: 176px;
+    height: 86px;
+    background: radial-gradient(126.74% 209.41% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%), radial-gradient(82.56% 82.56% at 50% 50%, #5018E0 23.51%, #7747F3 100%);
+    border: 1px solid #A78BF0;
+    border-radius: 20px;
+    color: #ffffff;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 43px;
+    align-items: center;
+    float: right;
+    margin-right: 21px;
+    margin-top: 25px;
+}
+.re>div:nth-child(n+2){
+    border: none;
+    border-top:2px solid #ffffff ;
+    border-bottom:2px solid #ffffff ;
+    border-radius:0 ;
+    margin-top:0;
+}
+.re>div:nth-child(2){
+    margin-top: 35px;
+}
