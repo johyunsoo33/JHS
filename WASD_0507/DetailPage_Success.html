@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세페이지</title>
+    <link rel="stylesheet" href="CSS/DetailPage.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <div><a href="Musium.html"></a></div>
+                    <p><a href="Musium.html" style="text-decoration: none; color: #FFF;">Musium</a></p>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="Musium_Review.html">실시간 리뷰</a></li>
+                        <li><a href="Musical_1.html">공연중인 작품</a></li>
+                        <li><a href="Musical_2.html">공연 예정작</a></li>
+                    </ul>
+                </div>
+                <div class="sub">
+                    <a href="Musical_1.html">
+                        <div class="search"></div>
+                    </a>
+                    <ul>
+                        <li><a href="#">마이페이지</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="BackImg">
+            <img src="IMG/임시.jpg" alt="">
+        </div>
+
+        </div>
+    </header>
+
+    <main>
+        <section id="title">
+            <div class="title_main">
+                <div><img src="IMG/M1.jpg" alt=""></div>
+                <div class="mu">
+                    <div>
+                        <h5>팬텀</h5>
+                    </div>
+
+                    <div>
+                        <p>공연장소</p>
+                        <p>샤롯데시어터</p>
+                    </div>
+
+                    <div>
+                        <p>공연기간</p>
+                        <p>2023.04.01 ~ 06.18</p>
+                    </div>
+
+                    <div>
+                        <p>출연배우</p>
+                        <p>홍광호 | 김준수 | 고은성 | 김성철 | 이영미 | 장은아 | 서경수 | 장지후 | 류인아 | 장민제 | 김용수 | 서범석 | 박현선 외</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="intro">
+            <div class="intro_mu">
+                <div>
+                    <h5>줄거리</h5>
+                    <div>
+                        <p>일본의 동명 베스트셀러 만화를 원작으로 한 뮤지컬 '데스노트'는 이름을 쓰게 되면 죽게 되는 ‘데스노트’를 우연히 주워 악인들을 처단하는 천재 고교생 ‘야가미
+                            라이토’와 그에 맞서는 명탐정 ‘엘(L)’의 치열한 두뇌 싸움을 그린다. 인간의 잘못된 욕망과 진정한 ‘정의’가 무엇인지 생각해볼 수 있는 작품이다.</p>
+                    </div>
+                </div>
+
+                <div></div>
+
+                <div>
+                    <div>
+                        <h5>스틸컷</h5>
+                        <div class="stillcut">
+                            <img src="IMG/M1.jpg" alt="">
+                            <img src="IMG/M1.jpg" alt="">
+                            <img src="IMG/M1.jpg" alt="">
+                            <img src="IMG/M1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="review">
+            <div class="re">
+                <div>
+                    <form action="#" id="reviewForm">
+                        <div>
+                            <label for="userimg"><img src="IMG/사람.png" alt=""></label>
+                            <label for="username">사용자 이름</label>
+                        </div>
+                       <select name="" id="star_point" size="1" required>
+                            <option selected>☆☆☆☆☆</option>
+                            <option>★☆☆☆☆</option>
+                            <option>★★☆☆☆</option>
+                            <option>★★★☆☆</option>
+                            <option>★★★★☆</option>
+                            <option>★★★★★</option>
+                       </select>
+                        <textarea name="리뷰" id="reviewText"></textarea>
+                        <input type="submit" value="등록">
+                    </form>
+                </div>
+                <div id="reviewsContainer"></div>
+            </div>
+        </section>
+    </main>
+
+   <script src="JS/DetailPage.js"></script>
+</body>
+
+</html>
