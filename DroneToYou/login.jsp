@@ -8,8 +8,8 @@
 
 </head>
 <body>
-   <div class="login">
-      <form action="login.do" method="post" name="loginForm" onsubmit="" class="loginTable">
+          <div class="login">
+                            <form action="login.do" method="post" name="loginForm" onsubmit="" class="loginTable">
                                 <table>
                                     <tbody>
                                         <tr>

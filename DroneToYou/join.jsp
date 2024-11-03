@@ -8,8 +8,8 @@
 <title>logined</title>
 </head>
 <body>
-	<div class="login">
-        <h3>로그인</h3>
+	<div class="join">
+        <h3>회원가입</h3>
         <form action="" method="post" name="loginForm" onsubmit="" class="loginTable">
             <table>
                 <tr>
