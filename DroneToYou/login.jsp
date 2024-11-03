@@ -29,7 +29,7 @@
                                     </tbody>
                                 </table>
                                 <button type="submit">로그인</button>
-                                <button type="button" onclick="">회원가입</button>
+                                <button type="button" onclick="joinGo();">회원가입</button>
                             </form>
                         </div>
 </body>
