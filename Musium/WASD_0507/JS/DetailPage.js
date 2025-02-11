@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     // 페이지 로드 시 기존 리뷰 로드
     loadReviews();
-
     document.getElementById('reviewForm').addEventListener('submit', function(event) {
         event.preventDefault(); // 폼 제출 기본 동작 막기
-
+        
         const reviewText = document.getElementById('reviewText').value;
 
         if (reviewText.trim() === "") {
@@ -59,10 +58,7 @@ function loadReviews() {
         // 리뷰 컨테이너에 추가
         document.getElementById('reviewsContainer').appendChild(reviewElement);
     });
-
-
 }
-
 function createReviewElement(review) {
     const reviewElement = document.createElement('div');
     reviewElement.classList.add('reviews');
