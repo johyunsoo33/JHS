@@ -1,0 +1,117 @@
+@charset "utf-8";
+.right>.loginTable {
+    display: block;
+    width: 300px;
+    height:165px;
+    margin-top: 25px;
+    padding: 5px;
+    background: #ffffff;
+    border-radius: 20px;
+    border-collapse: separate;
+    border-spacing: 5px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 1px;
+    border-radius: 10px;
+    padding-left: 30px;
+}
+.right>.loginTable tr {
+    width: 100%;
+    display: block;
+}
+.right>.loginTable tr>td {
+    height: 30px;
+    position: relative;
+    padding-left: 30px;
+}
+.right>.loginTable tr>td>input {
+    width: 100%;
+    height: 28px;
+    padding: 3px;
+    border: none;
+    border-bottom: 2px solid #D1D1D4;
+    transition: all 0.4s;
+    box-sizing: border-box; 
+    margin-left: 10px;
+}
+.right>.loginTable tr>td>input:active,
+.right>.loginTable tr>td>input:focus {
+    outline: none;
+    border-bottom-color: #6A679E;
+}
+.right>.loginTable tr>td .id_icon,
+.right>.loginTable tr>td .pw_icon {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.right>.loginTable tr:nth-child(1)>td .id_icon {
+    background-image: url('../img/id.png');
+}
+
+.right>.loginTable tr:nth-child(2)>td .pw_icon {
+    background-image: url('../img/password.png'); 
+}
+.right>.loginTable td input::placeholder {
+    color: #333;
+    transition: all 0.4s ease;
+}
+.right>.loginTable td input:focus::placeholder {
+    color: rgb(167, 175, 255);
+    font-size: 9px;
+    position: absolute;
+    top: -1.5px;
+    left: 0;
+    transition: all 0.4s ease;
+}
+.right>.loginTable>tbody:nth-child(3) {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: -10px;
+}
+.right>.loginTable>tbody:nth-child(3) tr {
+    display: inline-block;
+    width: 110px;
+    height: 40px;
+}
+.right>.loginTable>tbody:nth-child(3) tr td{
+    width: 80px;
+    height: 40px;
+     padding-left:17px;
+}
+.right>.loginTable>tbody:nth-child(3) tr:nth-child(2) td{
+    padding: 0;
+}
+.right>.loginTable button {
+    padding: 4px 7px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    background:none;
+    border: none;
+    align-items: center;
+    color: #4C489D;
+    cursor: pointer;
+    transition: all 0.4s;
+    border-radius: 4px;
+    border: 2px solid #D4D3E8;
+}
+
+.right>.loginTable button:nth-of-type(1):active,
+.right>.loginTable button:nth-of-type(1):hover {
+    border-color: #6A679E;
+    outline: none;
+    transition: all 0.4s;
+    transform: translateY(-2px);
+}
+
+.right>.loginTable button:nth-of-type(2):active,
+.right>.loginTable button:nth-of-type(2):hover {
+    border-color: #6A679E;
+    outline: none;
+    transition: all 0.4s;
+    transform: translateY(-2px);
+}

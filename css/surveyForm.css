@@ -1,0 +1,127 @@
+@charset "UTF-8";
+/*topArea*/
+.surveyArea {
+	width:1400px;
+	height:auto;
+	margin:0 auto;
+	padding:0;
+}
+.surveyArea tr td {
+	display:block;
+}
+.surveyArea tr:nth-child(1) {
+	position:relative;
+}
+.surveyArea tr>.surveyPhotoArea {
+	width:100%;
+	height:350px;
+	background:url('../img/slide1.png') center no-repeat;
+	background-size:cover;
+}
+.surveyArea tr>.surveyTextArea {
+	position:absolute;
+	left:50%;
+	top:0px;
+	width:1400px;
+	padding-top:100px;
+	font-family:'Noto Sans KR',sans-serif;
+	transform:translateX(-50%);
+}
+.surveyTextArea>p {
+	width:400px;
+	font-size:35px;
+	color:#fff;
+	font-weight:bold;
+	margin:10px auto;
+	text-align:center;
+	animation:focus-in-expand 0.8s cubic-bezier(0.250,0.460,0.450,0.940)		0.5s both;
+}
+.surveyTextArea>p:nth-of-type(2) {
+	width:500px;
+	font-size:19px;
+	color:#fff;
+	font-weight:300;
+	margin:10px auto;
+	text-align:center;
+	animation:focus-in-expand 0.8s cubic-bezier(0.250,0.460,0.450,0.940) 0.5s both;
+}
+.surveyTextArea>span {
+	display:block;
+	content:"";
+	width:30px;
+	height:4px;
+	margin:5px auto 10px;
+	background:#c40f39;
+}
+.surveyContainer {
+	display:block;
+	max-width:600px;
+	margin:50px auto;
+	background:#fff;
+	padding:20px 30px;
+	border-radius:15px;
+	border:3px solid #808080;
+	box-shadow:0 4px 6px rgba(0,0,0,0.4);
+}
+caption {
+	text-align:center;
+	color:#333;
+	font-size: 28px;
+	font-weight: bold;
+}
+.surveyContainer tr:nth-of-type(9),.surveyContainer tr:nth-of-type(10){
+	width:100px;
+	display: inline-block;
+	margin-top:30px;
+	margin-right: 20px;
+}
+.form-group {
+	display:block;
+	width:500px;
+	margin-bottom:20px;
+	margin-top: 20px;
+}
+.form-group td{
+	display:block;
+	width: 100%;
+}
+.form-group label {
+	display:block;
+	margin-bottom:5px;
+	font-weight:bold;
+	color:#555;
+}
+.form-group input {
+	width:100%;
+	padding:10px;
+	border:2px solid #ccc;
+	border-radius:5px;
+	font-size:16px;
+}
+.form-group textarea{
+	width:500px;
+	padding:10px;
+	border:2px solid #ccc;
+	border-radius:5px;
+	height: 40px;
+	resize: none;
+}
+.surveyContainer button {
+	padding:10px 25px;
+	font-size:18px;
+	color:#fff;
+	background-color:#007bff;
+	border:none;
+	border-radius:5px;
+	cursor:pointer;
+	box-shadow:3px 4px #04478f;
+}
+.surveyContainer button:hover {
+	background-color: #0056b3;
+}
+.surveyContainer button:active {
+	border-color:rgba(0,0,0,0.34) rgba(0,0,0,0.21) rgba(0,0,0,0.21);
+	box-shadow:0 1px 0 rgba(255,255,255,0.89),0 1px rgba(0,0,0,0.05) inset;
+	position:relative;
+	transition:all 0.2s;
+}

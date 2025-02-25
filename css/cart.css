@@ -1,0 +1,198 @@
+@charset "UTF-8";
+.cartMain {
+	width: 100%;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 0
+}
+/*topArea*/
+.cartMain .topArea {
+	width: 1400px;
+	height: auto;
+	margin: 0 auto;
+	padding: 0;
+}
+.cartMain .topArea tr td {
+	display: block;
+}
+.cartMain .topArea tr:nth-child(1) {
+	position: relative;
+}
+.cartMain .topArea tr>.cartPhotoArea {
+	width: 100%;
+	height: 350px;
+	background: url('../img/slide1.png') center no-repeat;
+	background-size: cover;
+}
+.cartMain .topArea tr>.cartTextArea {
+	position: absolute;
+	left: 50%;
+	top: 0px;
+	width: 1400px;
+	padding-top:100px;
+	font-family: 'Noto Sans KR', sans-serif;
+	transform: translateX(-50%);
+}
+.cartTextArea>p {
+	width: 400px;
+	font-size: 35px;
+	color: #fff;
+	font-weight: bold;
+	margin: 10px auto;
+	text-align: center;
+	animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+		0.5s both;
+}
+.cartTextArea>p:nth-of-type(2) {
+	width:500px;
+	font-size:19px;
+	color:#fff;
+	font-weight:300;
+	margin:10px auto;
+	text-align:center;
+	animation:focus-in-expand 0.8s cubic-bezier(0.250,0.460,0.450,0.940) 0.5s both;
+}
+.cartTextArea>span {
+	display: block;
+	content: "";
+	width: 30px;
+	height: 4px;
+	margin: 5px auto 10px;
+	background: #c40f39;
+}
+.cartTable {
+	width: 100%;
+	margin-top: 30px;
+	padding: 20px;
+}
+.cartTable>tbody>tr:nth-child(1) {
+	display: inline-block;
+	width: 900px;
+	margin-left: 100px;
+}
+.cartTable tr:nth-child(1)>th {
+	font-size: 23px;
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+.cartTable>tbody>tr:nth-child(1)>td {
+	display: block;
+	width: 100%;
+	border-top: 1px solid #d1d1d1;
+	border-bottom: 1px solid #d1d1d1;
+	padding-bottom: 20px;
+}
+.cartTable>tbody>.orderTable {
+	display: inline-block;
+	width: 300px;
+	margin-left: 40px;
+	border: 1px solid #c4cdd5;
+	padding: 20px 16px;
+	border-radius: 20px;
+}
+.cartTable>tbody>.orderTable td {
+	display: block;
+	font-size: 16px;
+	font-weight: 500;
+	margin-top: 20px;
+}
+.orderTable th {
+	width: 100%; font-size : 23px;
+	font-weight: bold;	
+	font-size: 23px;
+}
+.orderTable td>p {
+	display: inline-block;
+	padding-left: 20px;
+}
+.orderTable td>input {
+	background: none;
+	outline: none;
+	border: none;
+	padding-left: 20px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.orderTable td:last-child>button {
+	width: 100%;
+	height: 44px;
+	margin-top: 12px;
+	background-color: #346aff;
+	box-shadow:3px 4px #1f3f99;
+    border-radius:6px; 
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+	border: none;
+	transition: all 0.15s;
+}
+.orderTable td:last-child>button:hover
+	{
+	background-color:#112459;
+	transition: all 0.5s;
+}
+.orderTable td:last-child>button:active{
+	border-color: rgba(0,0,0,0.34) rgba(0,0,0,0.21) rgba(0,0,0,0.21);
+	box-shadow: 0 1px 0 rgba(255,255,255,0.89),0 1px rgba(0,0,0,0.05) inset;
+	position: relative;
+}
+.cartTable >tbody>tr:nth-child(1) .cartInfo {
+	width: 750px;
+	height: 240px;
+	margin: 20px auto;
+	border: 3px solid #d1d1d1;
+	border-radius: 20px;
+	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.155);
+	margin-top: 20px;
+	padding: 10px;
+}
+.cartInfo tr:first-of-type>th {
+	padding: 7px 0 9px;
+    border-right: 1px solid #c1c1c1;
+    background: #fbfafa;
+    font-weight: bold;
+    font-size: 18px;
+}
+.cartInfo tr:nth-child(2) td{
+	padding: 5px 0 3px;
+    text-align: center;
+    border-right: 1px solid #e9e9e950;
+    vertical-align: middle;
+    word-wrap: break-word;
+    font-size: 16px;
+}
+.cartInfo tr:nth-child(2)>td:nth-child(1)>input {
+	width: 20px;
+	height: 20px;
+	margin-right: 20px;
+}
+.cartInfo tr:nth-child(2)>td:nth-child(2) {
+	max-width:180px;
+	max-height:180px;
+	border-radius: 10px;
+	text-align: center;
+}
+.cartInfo tr:nth-child(2)>td:nth-child(2)>span{
+	display:inline-block;
+	text-align: center;
+	font-size: 17px;
+	font-weight:bold;
+	text-align: center;
+	width: 100%;
+}
+.cartInfo tr:nth-child(2)>td:nth-child(2)>img {
+	width: 180px;
+	height: 180px;
+	object-fit:cover;
+}
+.cartInfo tr:nth-child(2)>td {
+	font-size: 16px;
+}
+.cartInfo tr:nth-child(2)>td:nth-child(4) {
+	color: #e23030;
+}
+.cartText>ul>li>input {
+	margin: 0;
+	border: 1px solid #c4cdd5;
+	background-color: #fff;
+}

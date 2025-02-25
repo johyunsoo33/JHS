@@ -1,0 +1,221 @@
+@charset "utf-8";
+.slide-top-animation {
+    animation: slide-top-two 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+h1 {
+    display: block;
+    width: 200px;
+    font-size: 40px;
+    margin: 40px auto;
+}
+
+#infoUpdateTable{
+    display: block;
+    width: 930px;
+    border-bottom: 1.5px solid #00000078;
+    border-right: 0.5px solid #000000a6;
+    border-left: 0.5px solid #00000067;
+    border-top: 0.4px solid #0000002d;
+    border-radius: 10px;
+    margin: 20px auto;
+    font-family: 'Noto Sans KR', sans-serif;
+    border-spacing: 20px;
+    box-shadow: 0 14px 20px rgba(0, 0, 0, 0.079), 0 5px 5px rgba(0, 0, 0, 0.055);
+}
+
+#infoUpdateTable>form {
+    margin: 0 auto;
+}
+
+#infoUpdateTable .profileUpdate {
+    margin-top: -20px;
+    display: block;
+    width: 400px;
+    margin-bottom: 50px;
+}
+
+.profileUpdate>td>img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    align-items: center;
+    margin-top: 30px;
+}
+.profileUpdate>td>label{
+    display: block;
+    width: 100px;
+    height: 20px;
+    padding: 5px;
+    border: 1.5px solid #4866b8;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 20px;
+    background-color: #fff;
+    font-weight: bold;
+    color: #6189f5;
+    cursor: pointer;
+    outline: none;
+    margin-top: 20px;
+}
+.profileUpdate>td>input{
+    display: none;
+}
+#infoUpdateTable .infoUpdate_left{
+    float: left;
+    margin-top: -80px;
+    margin-right: 10px;
+    margin-left: 80px;
+}
+
+.infoUpdate_left tr {
+    height: 40px;
+    display: block;
+    margin-top: 20px;
+}
+
+.infoUpdate_left tr>th {
+    width: 30px;
+    height: 30px;
+}
+
+.infoUpdate_left tr>th>img {
+    width: 30px;
+    height: 30px;
+}
+
+.infoUpdate_left>tr:nth-child(1)>th {
+    width: 220px;
+    height: 40px;
+    font-size: 20px;
+}
+
+
+.infoUpdate_left tr>td>input {
+    width: 220px;
+    height: 25px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #D1D1D4;
+}
+
+.infoUpdate_left tr>td>input:active,
+.infoUpdate_left tr>td>input:focus {
+    transition: all 0.4s;
+    outline: none;
+    border-bottom-color: #f43737be;
+}
+#infoUpdateTable .infoUpdate_right {
+    float: right;
+    margin-top: -80px;
+    margin-right: 60px;
+}
+
+
+.infoUpdate_right>tr {
+    height: 40px;
+    display: block;
+    margin-top: 20px;
+}
+
+.infoUpdate_right tr>th {
+    width: 30px;
+    height: 30px;
+}
+
+.infoUpdate_right tr>th>img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.infoUpdate_right tr>td>input {
+    width: 255px;
+    height: 25px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #D1D1D4;
+    padding: 5px;
+    display: block;   
+}
+.infoUpdate_right>.birth>td>select {
+    width: 65px;
+    height: 35px;
+    transition: all 1s;
+    margin-left: -10px;
+    margin-right: 13px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #D1D1D4;
+    color: #9b9b9b;
+}
+.infoUpdate_right>tr>.phoneNum>input{
+    width: 56px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.infoUpdate_right>tr>.phoneNum>input:nth-of-type(1){
+    margin-left: 0px;
+}
+.infoUpdate_right>tr>.phoneNum>span{
+    display: inline-block;
+    width: 8px;
+    height: 1.5px;
+    background-color: #000000;
+}
+.infoUpdate_right>.birth>td>select:first-child {
+    margin-left: 0px;
+}
+.infoUpdate_right tr>td>input:active,
+.infoUpdate_right tr>td>input:focus {
+    transition: all 0.6s;
+    outline: none;
+    border-bottom-color: #f43737be;
+}
+
+#infoUpdateTable>table>tbody:nth-child(4)>tr {
+    display: block;
+    margin-top: 40px;
+    margin-left: 450px;
+}
+#infoUpdateTable tbody:last-child{
+display:block;
+width:100%;
+height:auto;
+margin-left:500px;
+margin-top:80px;
+margin-bottom:20px;
+}
+#infoUpdateTable tbody:last-child tr {
+ display: inline-block;
+}
+#infoUpdateArea tbody:last-child tr:nth-child(1){
+    margin-left: 500px;
+} 
+#infoUpdateTable tbody:last-child tr:nth-child(2){
+    margin-left: -60px;
+}
+#infoUpdateTable tbody:last-child>tr>td>button {
+    width: 80px;
+    height: 30px;
+    background: none;
+    border-radius: 20px;
+    border: 1.1px solid #000;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+#infoUpdateTable tbody:last-child>tr>td>button:hover {
+    animation: slide-top-two 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    transition: 0.5s all;
+    background-color: #f43737d8;
+    border: 1.1px solid #f43737;
+    transition: all 1s;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.151), 0 3px 3px rgba(0, 0, 0, 0.12);
+}
